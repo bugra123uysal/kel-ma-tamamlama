@@ -24,3 +24,9 @@
     top: 350px;
     left: 590px;
 }
+/* kelimenin düzgün halini gösteren yer */
+#dkelime{
+    position: relative;
+    top: 90px;
+    left: 500px;
+}
