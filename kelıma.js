@@ -45,11 +45,18 @@ var turKelimeler = [
 ];
  
 var karısıkkelime=  turKelimeler [(Math.floor(Math.random()*turKelimeler.length))]
-var kk=document.getElementById("dklm").innerHTML=karısıkkelime
+
+ /* kelimeyi karışık yazzdırmak */
+ var harflera=karısıkkelime.split('');//kelimenin harflerini ayırır
+ harflera.sort(function(){
+     return 0.5 - Math.random();
+ });
+
+ var kk=document.getElementById("dklm").innerHTML=harflera.join('');
+
 
 
 function kontr(){
-
     var turKelimeler = [
         "merhaba", "iyi", "geceler", "javascript", "fonksiyon", "örnek", "dizi", "kelime", "oluşturmak", "veri", 
         "işlem", "döngü", "koşul", "ifade", "değişken", "dil", "programlama", "uygulama", "proje", "geliştirmek", 
@@ -63,20 +70,49 @@ function kontr(){
         "olumlu", "olumsuz", "motivasyon", "ilerleme", "gerileme", "zaman", "zorluk", "kolaylık", "hız", 
         "geçikme", "gelişme", "geri", "ilgi", "takip", "trend", "teknoloji", "yeni", "eski"
     ];
-     
+
+     /* rastgele gelen kelimeler */
     var karısıkkelime=  turKelimeler [(Math.floor(Math.random()*turKelimeler.length))]
-    var kk=document.getElementById("dklm").innerHTML=karısıkkelime
+
     var doğruyaz=document.getElementById("kelimeyaz").value;
+    
+    /* kelimeyi karışık yazzdırmak */
+    var harflera=karısıkkelime.split('');//kelimenin harflerini ayırır
+    harflera.sort(function(){
+        return 0.5 - Math.random();
+    });
+    
+
+
+    
+  
+
+
+  
+
+setTimeout(function(){
+    var karısıkkelime=  turKelimeler [(Math.floor(Math.random()*turKelimeler.length))]
+
+    var doğruyaz=document.getElementById("kelimeyaz").value;
+    
+    /* kelimeyi karışık yazzdırmak */
+    var harflera=karısıkkelime.split('');//kelimenin harflerini ayırır
+    harflera.sort(function(){
+        return 0.5 - Math.random();
+    });
+    var kk=document.getElementById("dklm").innerHTML=harflera.join('')
+
+},4000);
+
 
 if(turKelimeler.includes(doğruyaz)){
-    console.log("doğru")
+    document.getElementById("dkelime").innerHTML="doğru yazdın "
     document.getElementById("kelimeyaz").value=""
 }else{
-    console.log("yanlış")
+    document.getElementById("dkelime").innerHTML="yanlış yazdın  "
     document.getElementById("kelimeyaz").value=""
     
 
 }
-
 
 }
